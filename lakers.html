@@ -1,114 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Site de notícias</title>
 
-    <head>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <script>
+      // Função para obter o número atual de visitas
+      function getVisitsCount() {
+        var count = localStorage.getItem('visits')
+        return count ? parseInt(count) : 0
+      }
 
-        <meta charset="UTF-8">
-        <title>Site de notícias</title>
+      // Função para atualizar e exibir o número de visitas
+      function updateVisitsCount() {
+        var count = getVisitsCount()
+        count++
+        localStorage.setItem('visits', count)
+        document.getElementById('count').textContent = count
+      }
 
-        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+      // Função para inicializar o contador
+      function initializeCounter() {
+        var count = getVisitsCount()
+        document.getElementById('count').textContent = count
+      }
+    </script>
+  </head>
 
-    </head>
+  <body id="uma-coluna" class="fotos">
+    <!-- Começo do container -->
+    <div id="container">
+      <!--Começo do menu-->
+      <div id="menu">
+        <!--Começo da navegação-->
+        <ul id="navegacao">
+          <li class="primeiro">
+            <a id="home" href="index.html">Home</a>
+          </li>
 
-    <body id="uma-coluna" class="fotos">
+          <li>
+            <a id="brasil" href="brasil.html">Brasil</a>
+          </li>
 
-        <!-- Começo do container -->
-        <div id="container">
+          <li>
+            <a id="internacional" href="">Internacional</a>
+          </li>
 
-            <!--Começo do menu-->
-            <div id="menu">
+          <li>
+            <a id="economia" href="">Economia</a>
+          </li>
 
-                <!--Começo da navegação-->
-                <ul id="navegacao">
+          <li>
+            <a id="saude" href="">Saúde</a>
+          </li>
 
-                    <li class="primeiro">
-                        <a id="home" href="index.html">Home</a>
-                    </li>
+          <li>
+            <a id="ciencia" href="">Ciência</a>
+          </li>
 
-                    <li>
-                        <a id="brasil" href="brasil.html">Brasil</a>
-                    </li>
+          <li>
+            <a id="fotos" href="entrevistas.html">Entrevistas</a>
+          </li>
+        </ul>
+        <!--Fim da navegação-->
+      </div>
+      <!--Fim do menu-->
 
-                    <li>
-                        <a id="internacional" href="">Internacional</a>
-                    </li>
+      <div id="conteudo">
+        <!--Caixa primária-->
+        <div id="primario">
+          <div class="caixa entrevista">
+            <h2>Últimas notícias</h2>
 
-                    <li>
-                        <a id="economia" href="">Economia</a>
-                    </li>
+            <div class="caixa-conteudo">
+              <h3>Lakers eliminado</h3>
 
-                    <li>
-                        <a id="saude" href="">Saúde</a>
-                    </li>
+              <img
+                class="imagem-principal"
+                src="imagens/lebron.jpg"
+                width="100%"
+              />
 
-                    <li>
-                        <a id="ciencia" href="">Ciência</a>
-                    </li>
+              <p>
+                LeBron James até tentou, mas os Lakers foram derrotados pelos
+                Nuggets e saíram com um placar negativo de 132 a 126 da Bal
+                Arena na noite da última terça-feira, 16. O craque da equipe de
+                Los Angeles até chegou a fazer 26 pontos, dar nove assistências
+                e pegar 12 rebotes, mas não foi suficiente. Por isso, em
+                entrevista coletiva, o jogador não escondeu a sua frustração.
+              </p>
+              <br />
 
-                    <li>
-                        <a id="fotos" href="entrevistas.html">Entrevistas</a>
-                    </li>
-
-                </ul>
-                <!--Fim da navegação-->
-
+              <p>
+                O que mais deixou LeBron James irritado foi o início dos Lakers.
+                Com parciais de 37 a 25 e 35 a 29 nos dois primeiros quartos de
+                jogo para os Nuggets, o craque destacou que a sua equipe demorou
+                para conseguir entrar de fato na partida. No entanto, quando
+                conseguiu já era tarde demais e a derrota foi sacramentada com
+                uma atuação espetacular de Nikola Jokic.
+              </p>
             </div>
-            <!--Fim do menu-->
-
-            <div id="conteudo">
-
-                <!--Caixa primária-->
-                <div id="primario">
-                    <div class="caixa entrevista">
-
-                        <h2>Últimas notícias</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <h3>Lakers eliminado</h3>
-                            
-                            <img class="imagem-principal" src="imagens/lebron.jpg" width="100%">
-                            
-                            <p>
-                                LeBron James até tentou, mas os Lakers foram derrotados pelos Nuggets e 
-                                saíram com um placar negativo de 132 a 126 da Bal Arena na noite da última 
-                                terça-feira, 16. O craque da equipe de Los Angeles até chegou a fazer 26 pontos, 
-                                dar nove assistências e pegar 12 rebotes, mas não foi suficiente. Por isso, em 
-                                entrevista coletiva, o jogador não escondeu a sua frustração.
-                            </p><br>    
-
-                            <p>
-                                O que mais deixou LeBron James irritado foi o início dos Lakers. 
-                                Com parciais de 37 a 25 e 35 a 29 nos dois primeiros quartos de 
-                                jogo para os Nuggets, o craque destacou que a sua equipe demorou para 
-                                conseguir entrar de fato na partida. No entanto, quando conseguiu já era 
-                                tarde demais e a derrota foi sacramentada com uma atuação espetacular de Nikola Jokic.
-                            </p>
-
-
-                        </div>
-                        
-
-                    </div>
-
-                
-                </div>
-                
-                <!--Fim da caixa primária-->
-
-            </div>
-
+          </div>
         </div>
-        <!--Fim do container-->
 
-        <!--Começo do rodape-->
-        <div id="container-rodape" style="clear: both;">
-            <div id="rodape">
-                &copy; Copyright 2023
-            </div>
-        </div>
-        <!--Fim do rodape-->
-        
-    </body>
+        <!--Fim da caixa primária-->
+      </div>
+    </div>
+    <div id="counter">
+      <img src="./imagens/view.png" class="view" />
+      <p>Número de visitas: <span id="count"></span></p>
+    </div>
 
+    <script>
+      // Atualiza o contador de visitas quando a página é carregada
+      updateVisitsCount()
+    </script>
+    <!--Fim do container-->
+
+    <!--Começo do rodape-->
+    <div id="container-rodape" style="clear: both">
+      <div id="rodape">&copy; Copyright 2023</div>
+    </div>
+    <!--Fim do rodape-->
+  </body>
 </html>

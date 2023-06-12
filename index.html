@@ -1,299 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Site de notícias</title>
 
-    <head>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <script>
+      // Função para obter o número atual de visitas
+      function getVisitsCount() {
+        var count = localStorage.getItem('visits')
+        return count ? parseInt(count) : 0
+      }
 
-        <meta charset="UTF-8">
-        <title>Site de notícias</title>
+      // Função para atualizar e exibir o número de visitas
+      function updateVisitsCount() {
+        var count = getVisitsCount()
+        count++
+        localStorage.setItem('visits', count)
+        document.getElementById('count').textContent = count
+      }
 
-        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+      // Função para inicializar o contador
+      function initializeCounter() {
+        var count = getVisitsCount()
+        document.getElementById('count').textContent = count
+      }
+    </script>
+  </head>
 
-    </head>
+  <body class="home">
+    <!-- Começo do container -->
+    <div id="container">
+      <!--Começo do menu-->
+      <div id="menu">
+        <!--Começo da navegação-->
+        <ul id="navegacao">
+          <li class="primeiro">
+            <a id="home" href="index.html">Home</a>
+          </li>
 
-    <body class="home">
+          <li>
+            <a id="brasil" href="brasil.html">Brasil</a>
+          </li>
 
-        <!-- Começo do container -->
-        <div id="container">
+          <li>
+            <a id="internacional" href="">Internacional</a>
+          </li>
 
-            <!--Começo do menu-->
-            <div id="menu">
+          <li>
+            <a id="economia" href="">Economia</a>
+          </li>
 
-                <!--Começo da navegação-->
-                <ul id="navegacao">
+          <li>
+            <a id="saude" href="">Saúde</a>
+          </li>
 
-                    <li class="primeiro">
-                        <a id="home" href="index.html">Home</a>
-                    </li>
+          <li>
+            <a id="ciencia" href="">Ciência</a>
+          </li>
 
-                    <li>
-                        <a id="brasil" href="brasil.html">Brasil</a>
-                    </li>
+          <li>
+            <a id="fotos" href="entrevistas.html">Entrevistas</a>
+          </li>
+        </ul>
+        <!--Fim da navegação-->
+      </div>
+      <!--Fim do menu-->
 
-                    <li>
-                        <a id="internacional" href="">Internacional</a>
-                    </li>
+      <div id="conteudo">
+        <!--Caixa primária-->
+        <div id="primario">
+          <div class="caixa entrevista">
+            <h2>Últimas entrevistas</h2>
 
-                    <li>
-                        <a id="economia" href="">Economia</a>
-                    </li>
+            <div class="caixa-conteudo">
+              <h3>Entrevista com Nikola Jokic</h3>
+              <img
+                class="imagem-principal"
+                src="imagens/murray.jpg"
+                width="100%"
+              />
+              <p>
+                Jokic diz que Jamal Murray hoje é o melhor jogador do Denver...
+              </p>
 
-                    <li>
-                        <a id="saude" href="">Saúde</a>
-                    </li>
-
-                    <li>
-                        <a id="ciencia" href="">Ciência</a>
-                    </li>
-
-                    <li>
-                        <a id="fotos" href="entrevistas.html">Entrevistas</a>
-                    </li>
-
-                </ul>
-                <!--Fim da navegação-->
-
+              <a href="entrevistas.html">Leia mais</a>
             </div>
-            <!--Fim do menu-->
-
-            <div id="conteudo">
-
-                <!--Caixa primária-->
-                <div id="primario">
-                    <div class="caixa entrevista">
-
-                        <h2>Últimas entrevistas</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <h3>Entrevista com Nikola Jokic</h3>
-                            <img class="imagem-principal" src="imagens/murray.jpg" width="100%">
-                            <p>
-                                Jokic diz que Jamal Murray hoje é o melhor jogador do Denver...
-                            </p>
-
-                            <a href="entrevistas.html">Leia mais</a>
-
-                        </div>
-                        
-
-                    </div>
-
-                    <div class="caixa">
-
-                        <h2>Mundo</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <ul id="lista-noticias">
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/candidatura.jpg" width="80" height="50">
-                                        <h3>Candidatura</h3>
-                                        <p>
-                                            Governador da Flórida vai anunciar candidatura...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/tumba.jpg" width="80" height="50">
-                                        <h3>Descoberta no Peru</h3>
-                                        <p>
-                                            Tumba com características únicas foi descoberta...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/meta.jpg" width="80" height="50">
-                                        <h3>Facebook multado</h3>
-                                        <p>
-                                            A multa bilionária ao Facebook por descuido...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/vini.jpg" width="80" height="50">
-                                        <h3>Racismo no futebol</h3>
-                                        <p>
-                                            Atacante brasileiro foi vítima de rascismo...
-                                        </p>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                
-                <!--Fim da caixa primária-->
-
-                <!--Caixa secundária-->
-                <div id="secundario">
-
-                    <div class="caixa destaque">
-
-                        <h2>Destaque</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <h3>Lakers eliminado</h3>
-                            <img class="imagem-principal" src="imagens/lebron.jpg" width="100%">
-                            <p>
-                                LeBron James não gostou do que viu do Lakers durante...
-                            </p>
-
-                            <a href="lakers.html">Leia mais</a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="caixa">
-
-                        <h2>Notícias recentes</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <ul id="lista-noticias">
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/palmeirasd.jpg" width="80" height="50">
-                                        <h3>CPI de apostas</h3>
-                                        <p>
-                                            Deputado desiste de ouvir Gabriel Menino...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/tv.jpg" width="80" height="50">
-                                        <h3>Proibição</h3>
-                                        <p>
-                                            Como a proibição de TV 8K afeta o Brasil...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/paifilho.jpg" width="80" height="50">
-                                        <h3>Rota mais longa</h3>
-                                        <p>
-                                            Pai e Filho encaram a rota mais longa do mundo...
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <img src="imagens/rio.jpg" width="80" height="50">
-                                        <h3>Nada amigável</h3>
-                                        <p>
-                                            Rio é uma das cidades menos amigáveis para...
-                                        </p>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-                <!--Fim da caixa secundária-->
-
-                <!--Lateral-->
-                <div id="lateral">
-                    
-                    <div class="caixa">
-
-                        <h2>Entrevistas</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <ul>
-
-                                
-                                <li><a href="">João Henrique</a></li>
-                                <li><a href="">Davi Oliveira</a></li>   
-                                <li><a href="">Igor Sanches</a></li>
-                                <li><a href="">Rodrigo Paiva</a></li>
-                                <li><a href="">Henrique Gudel</a></li>
-                                <li><a href="">Eduardo Pimentel</a></li>
-                                <li><a href="">Felipe Azevedo</a></li>
-                                
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                    <div class="caixa">
-
-                        <h2>Newsletter</h2>
-
-                        <div class="caixa-conteudo">
-
-                            <form action="">
-
-                                <div>
-
-                                    <label for="email">Email:</label> 
-
-                                    <input id="email" type="text" name="email" placeholder="E-mail">
-
-                                </div>
-
-                                <div>
-
-                                    <label for="email">Nome:</label> 
-
-                                    <input id="email" type="text" name="nome" placeholder="Nome">
-
-                                </div>
-
-                                <div>
-                                    
-                                    <input id="botao" type="submit" value="Cadastrar">
-
-                                </div>
-
-                            </form>
-                            
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!--Fim da lateral-->
-
+          </div>
+
+          <div class="caixa">
+            <h2>Mundo</h2>
+
+            <div class="caixa-conteudo">
+              <ul id="lista-noticias">
+                <li>
+                  <a href="">
+                    <img src="imagens/candidatura.jpg" width="80" height="50" />
+                    <h3>Candidatura</h3>
+                    <p>Governador da Flórida vai anunciar candidatura...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/tumba.jpg" width="80" height="50" />
+                    <h3>Descoberta no Peru</h3>
+                    <p>Tumba com características únicas foi descoberta...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/meta.jpg" width="80" height="50" />
+                    <h3>Facebook multado</h3>
+                    <p>A multa bilionária ao Facebook por descuido...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/vini.jpg" width="80" height="50" />
+                    <h3>Racismo no futebol</h3>
+                    <p>Atacante brasileiro foi vítima de rascismo...</p>
+                  </a>
+                </li>
+              </ul>
             </div>
-
+          </div>
         </div>
-        <!--Fim do container-->
 
-        <!--Começo do rodape-->
-        <div id="container-rodape" style="clear: both;">
-            <div id="rodape">
-                &copy; Copyright 2023
+        <!--Fim da caixa primária-->
+
+        <!--Caixa secundária-->
+        <div id="secundario">
+          <div class="caixa destaque">
+            <h2>Destaque</h2>
+
+            <div class="caixa-conteudo">
+              <h3>Lakers eliminado</h3>
+              <img
+                class="imagem-principal"
+                src="imagens/lebron.jpg"
+                width="100%"
+              />
+              <p>LeBron James não gostou do que viu do Lakers durante...</p>
+
+              <a href="lakers.html">Leia mais</a>
             </div>
-        </div>
-        <!--Fim do rodape-->
-        
-    </body>
+          </div>
 
+          <div class="caixa">
+            <h2>Notícias recentes</h2>
+
+            <div class="caixa-conteudo">
+              <ul id="lista-noticias">
+                <li>
+                  <a href="">
+                    <img src="imagens/palmeirasd.jpg" width="80" height="50" />
+                    <h3>CPI de apostas</h3>
+                    <p>Deputado desiste de ouvir Gabriel Menino...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/tv.jpg" width="80" height="50" />
+                    <h3>Proibição</h3>
+                    <p>Como a proibição de TV 8K afeta o Brasil...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/paifilho.jpg" width="80" height="50" />
+                    <h3>Rota mais longa</h3>
+                    <p>Pai e Filho encaram a rota mais longa do mundo...</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="">
+                    <img src="imagens/rio.jpg" width="80" height="50" />
+                    <h3>Nada amigável</h3>
+                    <p>Rio é uma das cidades menos amigáveis para...</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Fim da caixa secundária-->
+
+        <!--Lateral-->
+        <div id="lateral">
+          <div class="caixa">
+            <h2>Entrevistas</h2>
+
+            <div class="caixa-conteudo">
+              <ul>
+                <li><a href="">João Henrique</a></li>
+                <li><a href="">Davi Oliveira</a></li>
+                <li><a href="">Igor Sanches</a></li>
+                <li><a href="">Rodrigo Paiva</a></li>
+                <li><a href="">Henrique Gudel</a></li>
+                <li><a href="">Eduardo Pimentel</a></li>
+                <li><a href="">Felipe Azevedo</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="caixa">
+            <h2>Newsletter</h2>
+
+            <div class="caixa-conteudo">
+              <form action="">
+                <div>
+                  <label for="email">Email:</label>
+
+                  <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    placeholder="E-mail"
+                  />
+                </div>
+
+                <div>
+                  <label for="email">Nome:</label>
+
+                  <input
+                    id="email"
+                    type="text"
+                    name="nome"
+                    placeholder="Nome"
+                  />
+                </div>
+
+                <div>
+                  <input id="botao" type="submit" value="Cadastrar" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--Fim da lateral-->
+      </div>
+    </div>
+    <div id="counter">
+      <img src="./imagens/view.png" class="view" />
+      <p>Número de visitas: <span id="count"></span></p>
+    </div>
+
+    <script>
+      // Atualiza o contador de visitas quando a página é carregada
+      updateVisitsCount()
+    </script>
+    <!--Fim do container-->
+
+    <!--Começo do rodape-->
+    <div id="container-rodape" style="clear: both">
+      <div id="rodape">&copy; Copyright 2023</div>
+    </div>
+    <!--Fim do rodape-->
+  </body>
 </html>
